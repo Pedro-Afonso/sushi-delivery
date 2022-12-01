@@ -41,13 +41,16 @@ const Etapa01: NextPage = ({
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await fetch(`${URL_APP}/api/hello`, { method: "GET" })
+  const data = await fetch(
+    "https://api.jsonbin.io/v3/b/63888f2d7966e84526d11b66",
+    { method: "GET" }
+  )
     .then((res) => res.json())
     .catch((err) => console.log(err));
 
   return {
     props: {
-      products: data.products,
+      products: data.record.products,
     },
   };
 };
