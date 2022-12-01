@@ -5,11 +5,8 @@ import Image from "next/image";
 import { useStepContext } from "../../context/StepContext";
 import { Cart } from "../Cart";
 import Link from "next/link";
-interface ISushiQuantityProps {
-  products: TProduct[];
-}
 
-export const SushiQuantity: React.FC<ISushiQuantityProps> = ({ products }) => {
+export const SushiQuantity = () => {
   const { cart, total, handleQuantity } = useStepContext();
 
   return (

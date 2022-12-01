@@ -11,8 +11,6 @@ import {
 } from "../components";
 import styles from "../styles/Etapa01.module.css";
 
-const URL_APP = process.env.NEXT_PUBLIC_API_URL;
-
 const Etapa01: NextPage = ({
   products,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
