@@ -1,0 +1,36 @@
+.containerCards {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.containerText {
+  align-self: center;
+  width: 100%;
+}
+
+.containerText p,
+.containerText h2 {
+  margin: 2rem auto;
+  max-width: 37.5rem;
+  text-align: center;
+}
+.containerText h2 {
+  font-size: 2rem;
+}
+.containerText p {
+  font-size: 1rem;
+  letter-spacing: 0.15rem;
+}
+
+@media (max-width: 1000px) {
+  .containerCards {
+    justify-content: center;
+  }
+}

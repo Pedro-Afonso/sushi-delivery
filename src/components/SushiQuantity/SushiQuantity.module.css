@@ -1,0 +1,77 @@
+.container {
+  margin: 0 auto 2rem;
+
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.containerCard {
+  height: 18.5rem;
+  width: 13.875rem;
+  background-color: #fcfcfa;
+  color: black;
+  border-radius: 25px 0 25px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.containerCard img {
+  height: 12rem;
+  border-radius: 25px 0 25px 0;
+}
+
+.containerCard span {
+  padding: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  justify-content: flex-end;
+  margin: auto 1rem 1rem 0;
+}
+
+.quantity div {
+  color: #fcfcfa;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.quantity button {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+}
+
+.quantity button::content {
+  margin: 0;
+  padding: 0;
+}
+
+.control {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.control button {
+  width: 8rem;
+}

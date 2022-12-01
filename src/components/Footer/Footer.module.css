@@ -1,0 +1,12 @@
+.containerFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #272722;
+  margin-top: auto;
+}
+
+.containerFooter span {
+  font-size: 1rem;
+  padding: 0.5rem;
+}

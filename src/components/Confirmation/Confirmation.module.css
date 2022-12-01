@@ -1,0 +1,30 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+.confirmation {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 18.5rem;
+  width: 13.875rem;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #fcfcfa;
+  color: black;
+  border-radius: 0.625rem;
+}
+
+.containerItem {
+  display: flex;
+  justify-content: space-between;
+}
+
+.containerTotal {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}

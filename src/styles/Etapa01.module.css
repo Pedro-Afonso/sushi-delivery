@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.containerSubtitle {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding-left: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.title:after {
+  content: "";
+  display: block;
+  height: 0.25rem;
+  width: 20%;
+  background-color: #f3442c;
+  margin: 1.5rem auto 0 auto;
+  border-radius: 1rem;
+}
+
+.subtitle {
+  font-size: 2rem;
+  text-align: left;
+}
+
+.subtitle:after {
+  content: "";
+  display: block;
+  height: 0.25rem;
+  width: 50%;
+  background-color: #f3442c;
+  margin: 1.5rem 0 0 0;
+  border-radius: 1rem;
+}

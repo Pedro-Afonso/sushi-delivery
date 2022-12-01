@@ -1,0 +1,57 @@
+.container {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.containerInfo {
+  position: absolute;
+  z-index: 1;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  background: radial-gradient(closest-side, #000, transparent);
+
+  opacity: 0;
+  animation: moveRight 0.4s ease-in forwards;
+  animation-delay: 300ms;
+}
+
+.containerInfo h1 {
+  font-size: 2.75rem;
+  margin: 0;
+}
+
+.containerImage {
+  height: inherit;
+  width: 100%;
+  position: relative;
+}
+.containerImage img {
+  width: 100%;
+  object-fit: cover;
+  height: inherit;
+}
+
+@media (max-width: 680px) {
+  .containerInfo {
+    width: 100%;
+    background: radial-gradient(#000, 70%, transparent);
+  }
+}
+
+@keyframes moveRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

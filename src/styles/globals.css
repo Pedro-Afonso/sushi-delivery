@@ -11,7 +11,30 @@ a {
   text-decoration: none;
 }
 
+button {
+  padding: 1rem;
+  border-radius: 10px;
+  border-style: none;
+  color: #fcfcfa;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  background-color: #f3442c;
+  transition: filter 200ms ease-in;
+}
+
+button:hover {
+  filter: grayscale(0.5);
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: lightgray;
+  cursor: auto;
+}
+
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -23,4 +46,14 @@ a {
     color: white;
     background: black;
   }
+}
+
+::-webkit-scrollbar,
+scrollbar-width {
+  width: 0.7rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(79, 46, 46);
+  border-radius: 2rem;
 }

@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.cart {
+  font-size: 1.5rem;
+  color: #e95225;
+  border-radius: 10px;
+  border: 2px solid #e95225;
+  margin-right: 1rem;
+  padding: 1rem;
+}
+
+.cart span {
+  color: white;
+}

@@ -1,0 +1,33 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.step:last-child {
+  flex: 0;
+}
+
+.step button {
+  border-radius: 50%;
+  height: 3.125rem;
+  width: 3.125rem;
+}
+
+.step span {
+  background-color: #fcfcfa;
+  width: 100%;
+  height: 5px;
+}
+
+.fill {
+  background-color: #e95225 !important;
+}
