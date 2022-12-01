@@ -1,16 +1,12 @@
-import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
+import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-import { Cart, Footer, Header, HeadPage, Steps } from "../components";
+import { Footer, Header, HeadPage } from "../components";
 import SubmitImage from "../../public/assets/SubmitImage.svg";
 import styles from "../styles/Submit.module.css";
 
-const URL_APP = process.env.URL_BASE;
-
-const Etapa01: NextPage = ({
-  products,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Submit: NextPage = () => {
   return (
     <div className={styles.container}>
       <HeadPage />
@@ -43,16 +39,4 @@ const Etapa01: NextPage = ({
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
-  const data = await fetch(`${URL_APP}/api/hello`, { method: "GET" })
-    .then((res) => res.json())
-    .catch((err) => console.log(err));
-
-  return {
-    props: {
-      products: data.products,
-    },
-  };
-};
-
-export default Etapa01;
+export default Submit;
