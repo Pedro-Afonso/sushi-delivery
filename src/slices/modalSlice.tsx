@@ -9,6 +9,10 @@ const initialState = {
     isVisible: false,
     product: null,
   },
+  RemoveProduct: {
+    isVisible: false,
+    product: null,
+  },
 };
 
 const modalSlice = createSlice({
@@ -23,9 +27,14 @@ const modalSlice = createSlice({
       state.updateProduct.isVisible = !state.updateProduct.isVisible;
       state.updateProduct.product = action.payload;
     },
+    toggleRemoveProduct: (state, action) => {
+      state.updateProduct.isVisible = !state.updateProduct.isVisible;
+      state.updateProduct.product = action.payload;
+    },
   },
 });
 
-export const { toggleAddProduct, toggleUpdateProduct } = modalSlice.actions;
+export const { toggleAddProduct, toggleUpdateProduct, toggleRemoveProduct } =
+  modalSlice.actions;
 
 export default modalSlice.reducer;
