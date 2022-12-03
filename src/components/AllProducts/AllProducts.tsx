@@ -1,21 +1,18 @@
-import styles from "./AllProducts.module.scss";
-import db from "../../../db.json";
-import { CardMenu } from "../CardMenu";
-import { useEffect, useState } from "react";
-import { ProductMenu } from "./ProductMenu";
-import useCloseMenu from "../../hooks/useCloseMenu";
-import { useMenu } from "../../hooks/useMenu";
+import { useFetchDocuments } from "../../hooks";
 import { ProductCard } from "./ProductCard";
 import { UpdateProduct } from "./Modal";
+import { IProduct } from "../interface";
+
+import styles from "./AllProducts.module.scss";
 
 export const AllProducts = () => {
-  const { products } = db;
+  const { documents: products } = useFetchDocuments<IProduct>("products");
 
   return (
     <>
       <section className={styles.section}>
         {products.map((product) => (
-          <ProductCard key={product._id} product={product} />
+          <ProductCard key={product.id} product={product} />
         ))}
       </section>
       <UpdateProduct />
