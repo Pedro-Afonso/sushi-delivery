@@ -1,11 +1,9 @@
 import { useState } from "react";
 
-const useMenu = () => {
+export const useMenu = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const toggleMenuHandler = () => setIsVisible(!isVisible);
 
-  return [isVisible, toggleMenuHandler];
+  return { isVisible, toggleMenuHandler };
 };
-
-export default useMenu;
