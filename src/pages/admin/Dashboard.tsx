@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
-import { HeadPage } from "../../components";
+import { AllProducts, HeadPage } from "../../components";
 import { useAuthContext } from "../../context";
 import { useAuthentication } from "../../hooks/useAuthentication";
 
@@ -27,6 +27,7 @@ const Dashboard: NextPage = () => {
       <HeadPage />
       <h1>Dashboard</h1>
       <button onClick={logout}>Sair</button>
+      <AllProducts />
     </main>
   );
 };
