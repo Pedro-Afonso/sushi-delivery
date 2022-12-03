@@ -19,7 +19,7 @@ export const ProductMenu: React.FC<IProductMenuProps> = ({
 
   return (
     <CardMenu ref={menuRef}>
-      <li onClick={() => dispatch(toggleUpdateProduct(null))}>Adicionar</li>
+      <li onClick={() => dispatch(toggleUpdateProduct(null))}>Editar</li>
       <li onClick={() => dispatch(toggleRemoveProduct(null))}>Excluir</li>
     </CardMenu>
   );
