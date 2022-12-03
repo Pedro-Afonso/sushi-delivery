@@ -1,18 +1,13 @@
 import { HiDotsVertical } from "react-icons/hi";
 
-import { useMenu } from "../../../hooks";
 import { ProductMenu } from "../ProductMenu";
+import { IProduct } from "../../interface";
+import { useMenu } from "../../../hooks";
+
 import styles from "./ProductCard.module.scss";
 
 interface IProductCardProps {
-  product: {
-    _id: number;
-    name: string;
-    price: number;
-    url: string;
-    description: string;
-    ingredients: string[];
-  };
+  product: IProduct;
 }
 
 export const ProductCard: React.FC<IProductCardProps> = ({ product }) => {
@@ -20,7 +15,7 @@ export const ProductCard: React.FC<IProductCardProps> = ({ product }) => {
 
   return (
     <>
-      <div key={product._id} className={styles.card}>
+      <div key={product.id} className={styles.card}>
         <div className={styles.edit}>
           <HiDotsVertical className="icon hover" onClick={toggleMenuHandler} />
           {isVisible && <ProductMenu toggleMenuHandler={toggleMenuHandler} />}
