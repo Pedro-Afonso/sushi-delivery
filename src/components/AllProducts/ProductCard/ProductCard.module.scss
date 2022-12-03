@@ -1,0 +1,23 @@
+@import "/src/styles/variables.scss";
+
+.card {
+  background-color: $whiteRice;
+  color: $blackSushi;
+  padding: 1.25rem;
+  border-radius: 0.625rem;
+  position: relative;
+
+  .edit {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+}
