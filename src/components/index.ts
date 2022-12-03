@@ -1,6 +1,7 @@
 export * from "./AddressForm";
 export * from "./AllProducts";
 export * from "./Banner";
+export * from "./CardMenu";
 export * from "./Cart";
 export * from "./Confirmation";
 export * from "./Dashboard";
