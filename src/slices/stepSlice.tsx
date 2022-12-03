@@ -8,16 +8,21 @@ interface IItem {
 
 interface IState {
   cart: IItem[];
+  allProducts: IProduct[];
 }
 
 const initialState: IState = {
   cart: [],
+  allProducts: [],
 };
 
 const stepSlice = createSlice({
   name: "step",
   initialState,
   reducers: {
+    loadData: (state, action: PayloadAction<IProduct[]>) => {
+      state.allProducts = action.payload;
+    },
     handleSelectProduct: (state, action: PayloadAction<IProduct>) => {
       const hasProduct = state.cart
         .map((item) => item.product.id)
@@ -62,6 +67,7 @@ const stepSlice = createSlice({
   },
 });
 
-export const { handleSelectProduct, handleQuantity } = stepSlice.actions;
+export const { loadData, handleSelectProduct, handleQuantity } =
+  stepSlice.actions;
 
 export default stepSlice.reducer;
