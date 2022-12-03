@@ -6,6 +6,7 @@ import { ProductMenu } from "./ProductMenu";
 import useCloseMenu from "../../hooks/useCloseMenu";
 import { useMenu } from "../../hooks/useMenu";
 import { ProductCard } from "./ProductCard";
+import { UpdateProduct } from "./Modal";
 
 export const AllProducts = () => {
   const { products } = db;
@@ -17,6 +18,7 @@ export const AllProducts = () => {
           <ProductCard key={product._id} product={product} />
         ))}
       </section>
+      <UpdateProduct />
     </>
   );
 };
