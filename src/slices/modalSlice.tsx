@@ -9,7 +9,7 @@ const initialState = {
     isVisible: false,
     product: null,
   },
-  RemoveProduct: {
+  removeProduct: {
     isVisible: false,
     product: null,
   },
@@ -28,8 +28,8 @@ const modalSlice = createSlice({
       state.updateProduct.product = action.payload;
     },
     toggleRemoveProduct: (state, action) => {
-      state.updateProduct.isVisible = !state.updateProduct.isVisible;
-      state.updateProduct.product = action.payload;
+      state.removeProduct.isVisible = !state.removeProduct.isVisible;
+      state.removeProduct.product = action.payload;
     },
   },
 });
