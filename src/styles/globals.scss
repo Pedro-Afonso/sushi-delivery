@@ -59,3 +59,15 @@ scrollbar-width {
   background-color: rgb(79, 46, 46);
   border-radius: 2rem;
 }
+
+.icon {
+  color: $text;
+  width: 1.5rem;
+  height: 1.5rem;
+
+  &.hover {
+    &:hover {
+      color: $salmon;
+    }
+  }
+}
