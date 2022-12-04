@@ -49,8 +49,6 @@ export const AddProduct = () => {
 
     const url = await uploadImage(image);
 
-    console.log("url", url);
-
     if (!url || !name || !price || !description || !ingredient) return;
 
     const data: IUploadData = {
@@ -132,7 +130,10 @@ export const AddProduct = () => {
           />
         </div>
         <div className={styles.control}>
-          <button onClick={() => dispatch(toggleAddProduct(null))}>
+          <button
+            type="button"
+            onClick={() => dispatch(toggleAddProduct(null))}
+          >
             Voltar
           </button>
           <button type="submit">Salvar</button>
