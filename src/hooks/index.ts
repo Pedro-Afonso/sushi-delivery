@@ -6,3 +6,4 @@ export * from "./useFetchDocuments";
 export * from "./useFirestore";
 export * from "./useCloseMenu";
 export * from "./useMenu";
+export * from "./useStorage";
