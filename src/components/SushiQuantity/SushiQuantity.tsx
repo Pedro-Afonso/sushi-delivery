@@ -5,32 +5,51 @@ import Image from "next/image";
 import { useStepContext } from "../../context/StepContext";
 import { Cart } from "../Cart";
 import Link from "next/link";
+import { useAppDispatch, useAppSelector } from "../../hooks";
+import { useEffect, useState } from "react";
+import { handleQuantity } from "../../slices/stepSlice";
 
 export const SushiQuantity = () => {
-  const { cart, total, handleQuantity } = useStepContext();
+  const dispatch = useAppDispatch();
+
+  const cart = useAppSelector((state) => state.step.cart);
+
+  const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    let sum = 0;
+    cart.forEach((item) => (sum = sum + item.product.price * item.quantity));
+    setTotal(sum);
+  }, [cart]);
 
   return (
     <>
       <div className={styles.container}>
-        {cart.map(({ sushi, quantity }) => (
-          <div key={sushi._id} className={styles.containerCard}>
+        {cart.map(({ product, quantity }) => (
+          <div key={product.id} className={styles.containerCard}>
             <Image
               priority
-              src={sushi.url}
-              alt={sushi.name}
+              src={product.url}
+              alt={product.name}
               width={222}
               height={192}
             />
-            <span>{sushi.name}</span>
+            <span>{product.name}</span>
             <div className={styles.quantity}>
               <button
                 disabled={quantity === 0}
-                onClick={() => handleQuantity("SUB", sushi._id)}
+                onClick={() =>
+                  dispatch(handleQuantity({ opt: "SUB", id: product.id }))
+                }
               >
                 -
               </button>
               <div>{quantity}</div>
-              <button onClick={() => handleQuantity("ADD", sushi._id)}>
+              <button
+                onClick={() =>
+                  dispatch(handleQuantity({ opt: "ADD", id: product.id }))
+                }
+              >
                 +
               </button>
             </div>

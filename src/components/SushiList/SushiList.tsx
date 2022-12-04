@@ -1,43 +1,47 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useStepContext } from "../../context/StepContext";
+import { useAppDispatch, useAppSelector } from "../../hooks";
+import { handleSelectProduct } from "../../slices/stepSlice";
+import { IProduct } from "../interface";
 
-import { TProduct } from "../../pages/api/hello";
 import styles from "./SushiList.module.css";
 
 interface ISushiListProps {
-  products: TProduct[];
+  products: IProduct[];
 }
 
 export const SushiList: React.FC<ISushiListProps> = ({ products }) => {
-  const { cart, handleCheckSushi } = useStepContext();
+  const dispatch = useAppDispatch();
 
-  const sushiId = cart.map(({ sushi }) => sushi._id);
+  const cart = useAppSelector((state) => state.step.cart);
+
+  const productIdList = cart.map(({ product }) => product.id);
 
   return (
     <>
       <div className={styles.containerProducts}>
-        {products.map((sushi) => (
-          <div key={sushi._id} className={styles.containerProduct}>
+        {products.map((product) => (
+          <div key={product.id} className={styles.containerProduct}>
             <label className={styles.containerLabel}>
               <input
                 type="checkbox"
-                checked={sushiId.includes(sushi._id)}
-                onChange={() => handleCheckSushi(sushi)}
+                checked={productIdList.includes(product.id)}
+                onChange={() => dispatch(handleSelectProduct(product))}
               />
               <div className={styles.containerCard}>
                 <div className={styles.containerImage}>
                   <Image
                     priority
-                    src={sushi.url}
-                    alt={sushi.name}
+                    src={product.url}
+                    alt={product.name}
                     width={250}
                     height={250}
                   />
                 </div>
                 <div className={styles.containerInfo}>
-                  <h3>{sushi.name}</h3>
-                  <p>Ingredientes: {sushi.ingredients.join(", ")}</p>
+                  <h3>{product.name}</h3>
+                  <p>Ingredientes: {product.ingredients.join(", ")}</p>
                 </div>
               </div>
             </label>
