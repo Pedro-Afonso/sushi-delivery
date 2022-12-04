@@ -1,6 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { IProduct } from "../components/interface";
 
-const initialState = {
+interface IState {
+  [x: string]: {
+    isVisible: boolean;
+    product: IProduct | null;
+  };
+}
+
+const initialState: IState = {
   addProduct: {
     isVisible: false,
     product: null,
