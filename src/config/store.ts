@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import modalReducer from "../slices/modalSlice";
+import stepReducer from "../slices/stepSlice";
 
 export const store = configureStore({
   reducer: {
     modal: modalReducer,
+    step: stepReducer,
   },
 });
 
