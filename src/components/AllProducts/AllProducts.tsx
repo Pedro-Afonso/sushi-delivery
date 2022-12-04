@@ -1,6 +1,6 @@
 import { useFetchDocuments } from "../../hooks";
 import { ProductCard } from "./ProductCard";
-import { UpdateProduct } from "./Modal";
+import { RemoveProduct, UpdateProduct } from "./Modal";
 import { IProduct } from "../interface";
 
 import styles from "./AllProducts.module.scss";
@@ -15,7 +15,11 @@ export const AllProducts = () => {
           <ProductCard key={product.id} product={product} />
         ))}
       </section>
+
+      {/* Modals */}
       <UpdateProduct />
+      <RemoveProduct />
+      {/* /Modals */}
     </>
   );
 };
