@@ -8,6 +8,12 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -34,10 +40,20 @@ button:disabled {
   cursor: auto;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+input[type="text"],
+input[type="number"] {
+  border-style: none;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  color: black;
+  background-color: white;
+  font-size: 1.25rem;
+  text-align: end;
+}
+
+input[type="number"] {
+  max-width: 4rem;
+  text-align: center;
 }
 
 @media (prefers-color-scheme: dark) {
