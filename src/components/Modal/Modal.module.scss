@@ -1,8 +1,7 @@
 @import "/src/styles/variables.scss";
 
 .modal {
-  min-width: 34rem;
-  padding: 3rem;
+  padding: 2rem;
   background-color: $whiteRice;
   color: $blackSushi;
   border-radius: 0.5rem;
@@ -11,12 +10,15 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+  overflow: auto;
+  min-width: 34rem;
+  max-height: 90vh;
 
   .heading {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 
     button {
       background-color: transparent;
@@ -26,13 +28,6 @@
   }
 
   form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1.5rem;
-    width: 100%;
-
     .label-input {
       display: flex;
       justify-content: space-between;
@@ -51,6 +46,47 @@
       gap: 1rem;
     }
   }
+}
+
+.uploadImg {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  img {
+    border-radius: 2rem;
+  }
+  label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    background-color: $salmon;
+    cursor: pointer;
+    height: 5rem;
+    width: 5rem;
+    svg {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}
+
+.labelInput {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+
+  label {
+    font-weight: 600;
+    font-size: 1.25rem;
+  }
+}
+
+.control {
+  display: flex;
+  justify-content: space-between;
 }
 
 .overlay {
