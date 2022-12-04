@@ -1,6 +1,6 @@
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import Link from "next/link";
-
+import db from "../../db.json";
 import {
   Cart,
   Footer,
@@ -9,11 +9,12 @@ import {
   Steps,
   SushiList,
 } from "../components";
+import { IProduct } from "../components/interface";
 import styles from "../styles/Etapa01.module.css";
 
-const Etapa01: NextPage = ({
-  products,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Etapa01: NextPage = () => {
+  const { products } = db as { products: IProduct[] };
+
   return (
     <div className={styles.container}>
       <HeadPage />
@@ -29,21 +30,6 @@ const Etapa01: NextPage = ({
       <Footer />
     </div>
   );
-};
-
-export const getStaticProps: GetStaticProps = async () => {
-  const data = await fetch(
-    "https://api.jsonbin.io/v3/b/63888f2d7966e84526d11b66",
-    { method: "GET" }
-  )
-    .then((res) => res.json())
-    .catch((err) => console.log(err));
-
-  return {
-    props: {
-      products: data.record.products,
-    },
-  };
 };
 
 export default Etapa01;
