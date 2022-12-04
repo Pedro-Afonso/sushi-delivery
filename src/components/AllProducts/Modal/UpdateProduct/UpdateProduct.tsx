@@ -13,7 +13,7 @@ import {
 } from "../../../../slices/modalSlice";
 import { Modal } from "../../../Modal";
 
-import emptyImg from "../../../../../public/vercel.svg";
+import emptyImg from "../../../../../public/empty.png";
 
 import styles from "../../../Modal/Modal.module.scss";
 
