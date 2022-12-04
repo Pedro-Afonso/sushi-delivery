@@ -1,4 +1,11 @@
 .main {
   width: 100%;
   max-width: 75rem;
+  margin: 0 auto;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
 }

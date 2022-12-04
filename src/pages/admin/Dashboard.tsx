@@ -1,10 +1,10 @@
 import { NextPage } from "next";
-import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { useRouter } from "next/router";
 
+import { useAuthentication } from "../../hooks/useAuthentication";
 import { AllProducts, HeadPage } from "../../components";
 import { useAuthContext } from "../../context";
-import { useAuthentication } from "../../hooks/useAuthentication";
 
 import styles from "../../styles/admin/Dashboard.module.scss";
 
@@ -25,8 +25,10 @@ const Dashboard: NextPage = () => {
   return (
     <main className={styles.main}>
       <HeadPage />
-      <h1>Dashboard</h1>
-      <button onClick={logout}>Sair</button>
+      <div className={styles.top}>
+        <h1>Dashboard</h1>
+        <button onClick={logout}>Sair</button>
+      </div>
       <AllProducts />
     </main>
   );
