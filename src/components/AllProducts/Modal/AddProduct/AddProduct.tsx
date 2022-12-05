@@ -66,6 +66,7 @@ export const AddProduct = () => {
     setDescription("");
     setIngredient("");
     setImage(null);
+    dispatch(toggleAddProduct(null));
   };
 
   return (
@@ -74,7 +75,7 @@ export const AddProduct = () => {
       onClose={() => dispatch(toggleAddProduct(null))}
       title="Adicionar"
     >
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} autoComplete="off">
         <div className={styles.uploadImg}>
           <Image
             src={image ? URL.createObjectURL(image) : emptyImg}
