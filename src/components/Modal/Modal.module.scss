@@ -27,8 +27,14 @@
     }
   }
 
+  p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
   form {
-    .label-input {
+    .labelInput {
       display: flex;
       justify-content: space-between;
       align-items: center;
