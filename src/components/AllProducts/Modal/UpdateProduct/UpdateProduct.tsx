@@ -1,5 +1,6 @@
-import Image from "next/image";
 import { useEffect, useState } from "react";
+import Image from "next/image";
+
 import { HiCamera } from "react-icons/hi";
 import {
   useAppDispatch,
@@ -7,15 +8,10 @@ import {
   useFirestore,
   useStorage,
 } from "../../../../hooks";
-import {
-  toggleAddProduct,
-  toggleUpdateProduct,
-} from "../../../../slices/modalSlice";
-import { Modal } from "../../../Modal";
-
+import { toggleUpdateProduct } from "../../../../slices/modalSlice";
 import emptyImg from "../../../../../public/empty.png";
-
 import styles from "../../../Modal/Modal.module.scss";
+import { Modal } from "../../../Modal";
 
 interface IUploadData {
   name: string;
@@ -86,7 +82,7 @@ export const UpdateProduct = () => {
       onClose={() => dispatch(toggleUpdateProduct(null))}
       title="Atualizar Produto"
     >
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} autoComplete="off">
         <div className={styles.uploadImg}>
           <Image
             src={
