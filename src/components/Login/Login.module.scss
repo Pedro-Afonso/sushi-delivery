@@ -1,0 +1,36 @@
+@import "/src/styles/variables.scss";
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $whiteRice;
+  color: $blackSushi;
+  font-size: 1.25rem;
+  min-height: 20rem;
+  min-width: 30rem;
+  border-radius: 0.5rem;
+
+  .control {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
+
+.labelInput {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+
+  label {
+    margin-right: 4rem;
+  }
+}
