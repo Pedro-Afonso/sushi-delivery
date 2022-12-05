@@ -1,8 +1,8 @@
-import { TProductsData } from "../../pages/api/hello";
-import { SquareCard } from "../SquareCard";
 import styles from "./ListProducts.module.css";
+import { SquareCard } from "../SquareCard";
+import { IProduct } from "../interface";
 
-type IListProductsProps = TProductsData;
+type IListProductsProps = { products: IProduct[] };
 
 export const ListProducts: React.FC<IListProductsProps> = ({ products }) => {
   return (
@@ -17,7 +17,7 @@ export const ListProducts: React.FC<IListProductsProps> = ({ products }) => {
           </p>
         </div>
         {products.map((product) => (
-          <SquareCard key={product._id} product={product} />
+          <SquareCard key={product.id} product={product} />
         ))}
       </div>
     </>
