@@ -1,6 +1,6 @@
-import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
-import Link from "next/link";
-import db from "../../db.json";
+import type { NextPage } from "next";
+import { collection, getDocs } from "firebase/firestore";
+
 import {
   Cart,
   Footer,
@@ -11,9 +11,11 @@ import {
 } from "../components";
 import { IProduct } from "../components/interface";
 import styles from "../styles/Etapa01.module.css";
+import { db } from "../config/firebase";
+import { fetchProducts } from "../utils";
 
-const Etapa01: NextPage = () => {
-  const { products } = db as { products: IProduct[] };
+const Etapa01: NextPage<{ products: IProduct[] }> = ({ products }) => {
+  /* const { documents: products } = useProducts<IProduct[]>(); */
 
   return (
     <div className={styles.container}>
@@ -31,5 +33,11 @@ const Etapa01: NextPage = () => {
     </div>
   );
 };
+
+export async function getServerSideProps() {
+  const products = await fetchProducts();
+
+  return { props: { products } };
+}
 
 export default Etapa01;

@@ -2,13 +2,11 @@ import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import Image from "next/image";
 
 import { Banner, Footer, Header, HeadPage, ListProducts } from "../components";
+import { IProduct } from "../components/interface";
 import styles from "../styles/Home.module.css";
+import { fetchProducts } from "../utils";
 
-const URL_APP = process.env.NEXT_PUBLIC_API_URL;
-
-const Home: NextPage = ({
-  products,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Home: NextPage<{ products: IProduct[] }> = ({ products }) => {
   return (
     <>
       <HeadPage />
@@ -21,19 +19,10 @@ const Home: NextPage = ({
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
-  const data = await fetch(
-    "https://api.jsonbin.io/v3/b/63888f2d7966e84526d11b66",
-    { method: "GET" }
-  )
-    .then((res) => res.json())
-    .catch((err) => console.log(err));
+export async function getServerSideProps() {
+  const products = await fetchProducts();
 
-  return {
-    props: {
-      products: data.record.products,
-    },
-  };
-};
+  return { props: { products } };
+}
 
 export default Home;
