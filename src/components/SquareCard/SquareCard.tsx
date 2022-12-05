@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { IProduct } from "../interface";
 
-import { TProduct } from "../../pages/api/hello";
 import styles from "./SquareCard.module.css";
 
 interface ISquareCardProps {
-  product: TProduct;
+  product: IProduct;
 }
 
 export const SquareCard: React.FC<ISquareCardProps> = ({ product }) => {

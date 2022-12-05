@@ -1,7 +1,6 @@
 import type { AppProps } from "next/app";
 import { Provider } from "react-redux";
 
-import { StepProvider } from "../context/StepContext";
 import { AppAuthProvider } from "../context";
 import "../styles/globals.scss";
 import "../config/firebase";
@@ -15,9 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
       <AppAuthProvider auth={auth}>
-        <StepProvider>
-          <Component {...pageProps} />
-        </StepProvider>
+        <Component {...pageProps} />
       </AppAuthProvider>
     </Provider>
   );

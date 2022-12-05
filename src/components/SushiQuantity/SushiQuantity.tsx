@@ -1,13 +1,10 @@
-import styles from "./SushiQuantity.module.css";
-
-import { TProduct } from "../../pages/api/hello";
-import Image from "next/image";
-import { useStepContext } from "../../context/StepContext";
-import { Cart } from "../Cart";
-import Link from "next/link";
-import { useAppDispatch, useAppSelector } from "../../hooks";
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+
+import { useAppDispatch, useAppSelector } from "../../hooks";
 import { handleQuantity } from "../../slices/stepSlice";
+import styles from "./SushiQuantity.module.css";
 
 export const SushiQuantity = () => {
   const dispatch = useAppDispatch();

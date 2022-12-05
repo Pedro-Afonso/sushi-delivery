@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useStepContext } from "../../context/StepContext";
+
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import { handleSelectProduct } from "../../slices/stepSlice";
-import { IProduct } from "../interface";
-
 import styles from "./SushiList.module.css";
+import { IProduct } from "../interface";
 
 interface ISushiListProps {
   products: IProduct[];
