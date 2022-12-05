@@ -1,4 +1,10 @@
-import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  updateDoc,
+} from "firebase/firestore";
 import { db } from "../config/firebase";
 
 export const useFirestore = (docCollection: any) => {
@@ -22,5 +28,15 @@ export const useFirestore = (docCollection: any) => {
     }
   };
 
-  return { addDocument, updateDocument };
+  const deleteDocument = async (id: string) => {
+    const docRef = doc(db, docCollection, id);
+
+    try {
+      await deleteDoc(docRef);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  return { addDocument, updateDocument, deleteDocument };
 };
